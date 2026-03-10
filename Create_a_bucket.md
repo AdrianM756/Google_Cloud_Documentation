@@ -1,4 +1,4 @@
-## Create a Bucke
+## Create a Bucket
 
 in this demo, we will create a bucket on google cloud.
 <br>
