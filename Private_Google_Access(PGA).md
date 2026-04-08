@@ -7,6 +7,17 @@ PGA provides a "private" bridge to these services without requiring a public IP 
 **NOTE:** By default, Private Google Access is disabled on a VPC network.
 <br>
 
+## Key Characteristics
+
+* Subnet-Level Setting: You enable it on a <b>per-subnet basis</b>. Once on, any VM in that subnet can use it.
+
+* Internal Routing: Traffic <b>stays entirely within</b> Google’s high-speed network backbone and never touches the public internet.
+
+* No Cost: There is no additional charge for enabling Private Google Access itself (though standard data egress rates still apply).
+
+* Target Group: <b>It only affects VMs without external IP addresses</b>. VMs with external IPs already use an optimized path to Google services by default.
+<br>
+
 ## Enable Private Google Access (PGA)
 
 Private Google Access is enabled at the subnet level. When it is enabled, instances in the subnet that only have private IP addresses can send traffic to Google APIs and services through the default route (```0.0.0.0/0```) with a next hop to the default internet gateway. On this demo, we will enable PGA on an existing network(privatenet).
